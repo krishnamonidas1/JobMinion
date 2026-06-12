@@ -2,7 +2,7 @@
 
 An intelligent, fully automated job application pipeline that scrapes job listings, scores them against your resume, tailors your resume per job, generates personalised cover letters, and sends applications via email - all without manual intervention.
 
-Built as part of an internship project at NIELIT Tezpur, under Tezpur University MCA program.
+Built as part of an internship project at NIELIT Tezpur
 
 
 ## Features
