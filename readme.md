@@ -99,16 +99,6 @@ Built as part of an internship project at NIELIT Tezpur
     |   |-- package.json             Node dependencies
     |   |-- .env                     Frontend public keys only
     |
-    |-- job-scraper/                 Original CLI pipeline (kept for reference)
-    |   |-- scraper.py
-    |   |-- score_jobs.py
-    |   |-- resume_parser.py
-    |   |-- resume_tailor.py
-    |   |-- cover_letter.py
-    |   |-- email_sender.py
-    |   |-- resume_pdf_generator.py
-    |   |-- run_pipeline.py
-    |
     |-- .gitignore
     |-- README.md
 
