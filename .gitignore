@@ -1,7 +1,15 @@
-__pycache__/
+# Environment files — never commit these
+backend/.env
+frontend/.env
 .env
-.venv
-resume.json
-resume.pdf
-verify_pdf.py
-test_resume.pdf
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.pdf
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.env.local
