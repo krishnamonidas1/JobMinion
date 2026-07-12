@@ -135,7 +135,7 @@ export default function Register() {
               <input type="text" value={fullName}
                 onChange={e => setFullName(e.target.value)}
                 onBlur={() => setTouched(t => ({...t, fullName: true}))}
-                required placeholder="Krishnamoni Das"
+                required placeholder="Krishna Moni Das"
                 className={`w-full border rounded-lg px-3 py-2.5 text-sm
                             focus:outline-none focus:ring-2 focus:ring-indigo-500
                             focus:border-transparent ${
