@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import auth, resume, jobs, apply, scraper
-
+from routers import auth, resume, jobs, apply, scraper,preferences
+  
 app = FastAPI(
     title="JobMinion API",
     description="AI-powered job application agent",
@@ -27,6 +27,7 @@ app.include_router(resume.router)
 app.include_router(jobs.router)
 app.include_router(apply.router)
 app.include_router(scraper.router)
+app.include_router(preferences.router)
 
 
 # ── Health check ──────────────────────────────────────────────────

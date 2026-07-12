@@ -77,3 +77,33 @@ async def get_scraper_status(authorization: str = Header(...)):
         "running":     scraper_status["running"],
         "last_result": scraper_status["last_result"]
     }
+@router.post("/run")
+async def trigger_scraper(
+    request:          ScrapeRequest,
+    background_tasks: BackgroundTasks,
+    authorization:    str = Header(...)
+):
+    user_id = get_user_id(authorization)
+
+    # If no queries provided, use user's saved preferences
+    if not request.queries:
+        prefs = supabase.table("user_profiles")\
+            .select("job_titles, locations")\
+            .eq("id", user_id)\
+            .execute()
+        if prefs.data and prefs.data[0].get("job_titles"):
+            request.queries  = prefs.data[0]["job_titles"]
+            request.location = prefs.data[0].get("locations", ["India"])[0]
+
+    if scraper_status["running"]:
+        raise HTTPException(status_code=409,
+            detail="Scraper is already running.")
+
+    background_tasks.add_task(
+        _run_in_background,
+        request.queries,
+        request.location,
+        request.limit
+    )
+    return {"message": "Scraper started", "status": "running",
+            "queries": request.queries}
