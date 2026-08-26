@@ -71,7 +71,7 @@ Resume text:
         model=LLM_MODEL,
         messages=[{"role": "user", "content": prompt}],
         api_key=LLM_API_KEY,
-        max_tokens=2000
+        max_tokens=4000
     )
     raw = response.choices[0].message.content.strip()
     raw = raw.replace("```json", "").replace("```", "").strip()
