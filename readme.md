@@ -712,10 +712,10 @@ Potential future enhancements include:
 ## How to run start jobminion
 - (.venv) PS C:\Users\KRISHNAMONI\JobMinion> 
 cd backend
-uvicorn main:app --reload --port 8000
+- uvicorn main:app --reload --port 8000
 
 - Another terminal
 - (.venv) PS C:\Users\KRISHNAMONI\JobMinion>
 cd frontend
-npm run dev
+- npm run dev
 
